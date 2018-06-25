@@ -1,4 +1,4 @@
-# Code for Online Updating Proportional Diagnostics
+# Code for Online Updating Proportional Hazards Test
 
 This repository contains `R` code for *An Online Updating Approach
 for Testing the Proportional Hazards Assumption with Streams of Big
