@@ -22,3 +22,7 @@ and another for the frailty model.
 
 5. `example.R` provides an example how online updating can be performed with
 simulated data whose structure resembles that of SEER data. 
+
+6. `simulated_survdata.csv` contains a total of 1,000,000 simulated observations
+with three covariates, `Age`, `Sex` and `Black`. The average censoring rate
+is 50.2%.
