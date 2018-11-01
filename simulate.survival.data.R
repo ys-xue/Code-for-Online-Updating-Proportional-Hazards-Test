@@ -3,7 +3,6 @@ genData <- function(lambda, beta, n, tmax, epsilon) {
     rtmax <- runif(n, 0, tmax)
     vepsilon <- rbinom(n, 1, epsilon)
     rtmax <- tmax * vepsilon + (1 - vepsilon) * rtmax
-    rtmax <- pmin(rtmax, tmax)
     p <- length(beta)
     x1 <- rnorm(n)
     x2 <- rbinom(n, 1, 0.5)
@@ -26,12 +25,9 @@ genData <- function(lambda, beta, n, tmax, epsilon) {
 
 
 genDataFrailty <- function(lambda, beta, n,  tmax, epsilon, sd) {
-        # Use epsilon<tmax> + (1-epsilon)U(0, tmax) as random censoring time
         rtmax <- runif(n, 0, tmax)
         vepsilon <- rbinom(n, 1, epsilon)
         rtmax <- tmax * vepsilon + (1 - vepsilon) * rtmax
-        # rtmax <- runif(n, ltuning * tmax, utuning * tmax)
-        rtmax <- pmin(rtmax, tmax)
         p <- length(beta)
         x1 <- rnorm(n)
         x2 <- rbinom(n, 1, 0.5)
@@ -43,7 +39,6 @@ genDataFrailty <- function(lambda, beta, n,  tmax, epsilon, sd) {
         # attention
         tfail <- rexp(n, rate = 1)
         tfail <- tfail / hazard
-        # why normalize using hazard?
         status <- (tfail <= rtmax) + 0
         time <- tfail * status + rtmax * (1 - status)
         return(data.frame(
