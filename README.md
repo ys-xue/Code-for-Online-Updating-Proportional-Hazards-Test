@@ -1,8 +1,8 @@
 # Code for Online Updating Proportional Hazards Test
 
 This repository contains `R` code for *An Online Updating Approach
-for Testing the Proportional Hazards Assumption with Streams of Big
-Survival Data*.
+for Testing the Proportional Hazards Assumption with Streams of
+Survival Data* by Yishu Xue, HaiYing Wang, Jun Yan and Elizabeth D. Schifano.
 
 1. `bczph.cee.R` implements the proposed online updating cumulative
 test statistic with the matrices and Schoenfeld residuals evaluated
